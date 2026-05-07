@@ -36,12 +36,12 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col leading-tight">
               <span className="font-black text-base tracking-tight text-foreground">ME Council</span>
-              <span className="hidden xl:inline text-xs text-muted-foreground font-bold">{t("navbar.subtitle")}</span>
+              <span className="hidden 2xl:inline text-xs text-muted-foreground font-bold">{t("navbar.subtitle")}</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-0.5 ml-4 flex-1 min-w-0 overflow-x-auto">
+          <nav className="hidden lg:flex items-center gap-0.5 ml-4 flex-1 min-w-0">
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = pathname === link.href;
@@ -50,7 +50,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "relative px-3 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center gap-2 group whitespace-nowrap",
+                    "relative px-2 2xl:px-3 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center gap-1.5 2xl:gap-2 group whitespace-nowrap",
                     isActive
                       ? "text-primary bg-primary/10 shadow-md shadow-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
@@ -60,7 +60,7 @@ export default function Navbar() {
                     "h-4 w-4 transition-all duration-300 flex-shrink-0",
                     isActive ? "text-primary scale-110" : "text-muted-foreground group-hover:text-foreground"
                   )} />
-                  <span className="hidden xl:inline">{link.label}</span>
+                  <span className="hidden 2xl:inline">{link.label}</span>
                   {isActive && (
                     <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full shadow-lg shadow-primary/50" />
                   )}
