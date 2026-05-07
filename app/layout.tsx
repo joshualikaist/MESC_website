@@ -32,7 +32,7 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#2563eb" />
       </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden">
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>

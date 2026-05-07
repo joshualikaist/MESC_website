@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full glass-premium border-b">
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 items-center gap-2">
           {/* Logo & Brand */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
             <div className="relative w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-primary-foreground shadow-lg shadow-primary/20 group-hover:shadow-primary/30 transition-all duration-300 group-hover:scale-105 flex-shrink-0">
@@ -36,12 +36,12 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col leading-tight">
               <span className="font-black text-base tracking-tight text-foreground">ME Council</span>
-              <span className="hidden sm:inline text-xs text-muted-foreground font-bold">{t("navbar.subtitle")}</span>
+              <span className="hidden xl:inline text-xs text-muted-foreground font-bold">{t("navbar.subtitle")}</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-0.5 ml-16">
+          <nav className="hidden lg:flex items-center gap-0.5 ml-4 flex-1 min-w-0 overflow-x-auto">
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = pathname === link.href;
@@ -60,7 +60,7 @@ export default function Navbar() {
                     "h-4 w-4 transition-all duration-300 flex-shrink-0",
                     isActive ? "text-primary scale-110" : "text-muted-foreground group-hover:text-foreground"
                   )} />
-                  <span className="hidden sm:inline">{link.label}</span>
+                  <span className="hidden xl:inline">{link.label}</span>
                   {isActive && (
                     <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full shadow-lg shadow-primary/50" />
                   )}
@@ -70,7 +70,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-2 ml-auto">
+          <div className="flex items-center gap-2 ml-auto shrink-0">
             {/* Language Toggle */}
             <button
               onClick={() => setLang(lang === "ko" ? "en" : "ko")}
